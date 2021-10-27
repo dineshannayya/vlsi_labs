@@ -1,0 +1,1 @@
+docker run -ti --rm  -v $(pwd):/project dineshannayya/openlane:rc7  sh -c "cd /project && openroad -exit input/or_pdn.tcl | tee output/24-pdn.log"

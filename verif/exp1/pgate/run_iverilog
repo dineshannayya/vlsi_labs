@@ -1,0 +1,2 @@
+iverilog -g2005-sv  -I ./ tb_top.v -DWFDUMP -DFUNCTIONAL -DUSE_POWER_PINS -o tb_top.vvp
+vvp tb_top.vvp

@@ -1,0 +1,2 @@
+iverilog -g2005-sv -I ./ tb_top.v -DFUNCTIONAL -DWFDUMP -o tb_top.vvp
+vvp tb_top.vvp

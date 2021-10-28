@@ -1,0 +1,438 @@
+%PDF-1.2 
+%‚„œ”
+ 
+12 0 obj
+<<
+/Length 13 0 R
+>>
+stream
+BT212.52 705  TD0 0 0 rg /F0 15.96  Tf0.0197  Tc -0.0097  Tw (Magic, CIF, and ) Tj114.12 0  TD 0  Tc 0  Tw (GDS) Tj31.92 0  TD 0.026  Tc -0.056  Tw ( Files,) Tj-143.04 -13.92  TD /F0 11.04  Tf0.0126  Tc -0.0126  Tw (Magic Tech Files, ) Tj85.44 0  TD -0.0073  Tc 0  Tw (MOSIS) Tj34.32 0  TD -0  Tc 0  Tw ( Tech Codes,) Tj58.56 0  TD 0  Tc 0  Tw ( ) Tj-166.56 -15.84  TD /F0 9  Tf0.0349  Tc -0.0049  Tw (\(and things that go ) Tj73.2 0  TD /F1 14.04  Tf-0.0785  Tc 0  Tw (bump) Tj34.92 0  TD /F0 9  Tf0.024  Tc 0.006  Tw ( in the night) Tj45.6 0  TD /F2 11.04  Tf0.0437  Tc 0  Tw (\)) Tj-309 -52.32  TD 0.0055  Tc -0.0055  Tw (This document covers some important topics relating to sending our chip designs to ) Tj372.96 0  TD -0.0756  Tc 0  Tw (MOSIS) Tj33.48 0  TD 0.0291  Tc -0.0291  Tw ( for) Tj-406.44 -12.96  TD 0.0129  Tc -0.0129  Tw (fabrication.  It includes brief discussions of how to generate files in the \221CIF\222 format that ) Tj396.24 0  TD -0.0756  Tc 0  Tw (MOSIS) Tj-396.24 -12.96  TD 0.0051  Tc -0.0051  Tw (requires, tips on final checking of the design, and a brief look at magic and CIF file s) Tj375.36 0  TD -0.0102  Tc 0  Tw (yntax) Tj24.48 0  TD 0  Tc (.) Tj-399.84 -45.6  TD /F1 11.04  Tf0.0206  Tc -0.0206  Tw (Magic Files versus CIF \(and ) Tj136.32 0  TD -0.0536  Tc 0  Tw (GDS\)) Tj26.28 0  TD 0.04  Tc -0.04  Tw ( File Formats) Tj-162.6 -25.68  TD /F2 11.04  Tf0.0125  Tc -0.0125  Tw (When you create your layouts, your design is stored in a file format particular to the specific ) Tj411.84 0  TD -0.0424  Tc 0  Tw (EDA) Tj22.56 0  TD 0.0254  Tc -0.0254  Tw ( tool) Tj-434.4 -12.96  TD 0.0025  Tc -0.0025  Tw (you are using.  In our case, this is Magic, and the geometry information is output into ) Tj379.8 0  TD -0.0539  Tc 0  Tw (\221.mag\222) Tj28.92 0  TD 0.0174  Tc -0.0174  Tw ( files when) Tj-408.72 -12.96  TD -0.0011  Tc 0.0011  Tw (you use the \221save\222 command.  For other tools, other formats are used.  IC ) Tj325.56 0  TD 0.02  Tc 0  Tw (foundaries) Tj46.8 0  TD -0.0424  Tc 0.0424  Tw ( howeve) Tj36.96 0  TD 0.0263  Tc -0.0263  Tw (r require a) Tj-409.32 -12.96  TD 0.015  Tc -0.015  Tw (standard format independent of the particular design tool.) Tj0 -25.92  TD -0.0117  Tc 0.0117  Tw (The most common file formats accepted by IC ) Tj208.08 0  TD 0.02  Tc 0  Tw (foundaries) Tj46.8 0  TD -0.0178  Tc 0.0178  Tw ( are CIF and ) Tj57.48 0  TD -0.04  Tc 0  Tw (GDS) Tj21.96 0  TD 0  Tc ( ) Tj2.76 0  TD -0.04  Tc (\(aka) Tj18.96 0  TD 0  Tc ( ) Tj2.76 0  TD -0.0016  Tc (\221Calma\222\).) Tj42.6 0  TD -0.001  Tc 0.001  Tw (  The main) Tj-401.4 -12.96  TD -0.0018  Tc 0.0018  Tw (difference is that CIF is ASCII \(human readable\) while ) Tj246.12 0  TD -0.0509  Tc 0  Tw (G) Tj7.92 0  TD -0.0346  Tc (DS) Tj14.04 0  TD 0.0148  Tc -0.0148  Tw ( is binary.  While ) Tj79.32 0  TD -0.04  Tc 0  Tw (GDS) Tj21.96 0  TD 0.0009  Tc -0.0009  Tw ( is preferred by many) Tj-369.36 -12.96  TD 0.0064  Tc -0.0064  Tw (people due to it\222s smaller file size, the forma) Tj197.64 0  TD 0.0021  Tc -0.0021  Tw (t of CIF is easi) Tj65.04 0  TD 0.018  Tc -0.018  Tw (er to understand.) Tj74.16 0  TD 0.0168  Tc -0.0168  Tw (  This is the format we will) Tj-336.84 -12.96  TD 0.0109  Tc 0  Tw (use.) Tj0 -25.92  TD 0.0032  Tc -0.0032  Tw (Some examples of Magic and CIF files are shown on the attached page.  For detailed information on) Tj0 -12.96  TD 0.008  Tc -0.008  Tw (Magic\222s file format, please see the on-line user and maintenance manuals for Magic \(espe) Tj397.32 0  TD 0.0056  Tc -0.0056  Tw (cially Magic) Tj-397.32 -13.08  TD /F0 11.04  Tf0.0119  Tc -0.0119  Tw (Tutorial #9: Format Conversion for CIF and ) Tj208.08 0  TD 0.0596  Tc 0  Tw (Calma) Tj30.24 0  TD /F2 11.04  Tf0.0218  Tc (\).) Tj6.48 0  TD -0.0084  Tc 0.0084  Tw (  A good expla) Tj64.92 0  TD -0.0055  Tc 0.0055  Tw (nation of CIF and ) Tj80.88 0  TD -0.04  Tc 0  Tw (GDS) Tj21.96 0  TD 0  Tc ( ) Tj2.76 0  TD -0.0083  Tc (\(Calma\)) Tj-415.32 -12.96  TD 0.002  Tc -0.002  Tw (file formats can be found in an out-of-print text book by Stev) Tj270.12 0  TD 0.0091  Tc -0.0091  Tw (en ) Tj13.2 0  TD 0.0014  Tc 0  Tw (Rubin) Tj27 0  TD 0  Tc (.) Tj2.76 0  TD 0.008  Tc -0.008  Tw (  He has placed this book on the) Tj-313.08 -13.08  TD 0.0245  Tc -0.0245  Tw (Web for free access at ) Tj101.28 0  TD /F0 11.04  Tf0.017  Tc 0  Tw (http://www.rulabinsky.com/cavd) Tj147.12 0  TD /F2 11.04  Tf0  Tc (.) Tj2.76 0  TD -0.003  Tc 0.003  Tw (  See Appendix B for CIF and Appendix C for) Tj-251.16 -12.96  TD -0.04  Tc 0  Tw (GDS) Tj21.96 0  TD 0.0132  Tc -0.0132  Tw ( format descriptions.) Tj-21.96 -45.6  TD /F1 11.04  Tf0.0051  Tc -0.0051  Tw (Exporting to CIF \(or ) Tj101.28 0  TD -0.0536  Tc 0  Tw (GDS\)) Tj26.28 0  TD 0.0395  Tc -0.0395  Tw ( Files from Magic) Tj-127.56 -25.68  TD /F2 11.04  Tf-0.0014  Tc 0  Tw (Magic) Tj28.2 0  TD 0.0099  Tc -0.0099  Tw ( can export it\222s drawing data to either CIF or ) Tj200.28 0  TD -0.04  Tc 0  Tw (GDS) Tj21.96 0  TD 0.0017  Tc -0.0017  Tw ( formats.  To export to CIF, do:) Tj-214.44 -22.68  TD /F3 9  Tf0  Tc 0  Tw (:cif) Tj21.6 0  TD ( ) Tj5.4 0  TD (ostyle) Tj32.4 0  TD ( ) Tj5.4 0  TD (lambda=0.6\(nwell\)) Tj-64.8 -12.84  TD (:cif) Tj21.6 0  TD ( write <filename>) Tj-57.6 -25.92  TD /F2 11.04  Tf0.0084  Tc -0.0084  Tw (The first command tells magic how to scale the design during the export process and that the target) Tj0 -12.96  TD 0.023  Tc -0.023  Tw (process is ) Tj46.2 0  TD 0.0115  Tc 0  Tw (nwell.) Tj27.36 0  TD 0.0081  Tc -0.0201  Tw (  The second command creates the output file \(appending ) Tj256.08 0  TD 0.0334  Tc 0  Tw (\221.cif\222) Tj21.96 0  TD -0.0076  Tc 0.0076  Tw ( to the name you supply\).) Tj-351.6 -12.96  TD 0.0035  Tc -0.0035  Tw (These are the commands we will use.) Tj0 -25.92  TD 0.0048  Tc -0.0048  Tw (There are many options to these commands.  For instance, if you wish to export ) Tj355.08 0  TD -0.04  Tc 0  Tw (GDS) Tj21.96 0  TD 0.0011  Tc -0.0011  Tw ( instead of CIF, then) Tj-377.04 -12.96  TD 0.0246  Tc 0  Tw (substitue) Tj39.48 0  TD 0  Tc ( ) Tj2.76 0  TD /F3 9  Tf(:calma) Tj32.4 0  TD ( write <filename>) Tj91.8 0  TD /F2 11.04  Tf0.0086  Tc -0.0086  Tw (  for the second command.  Magic will write the file in ) Tj244.44 0  TD -0.04  Tc 0  Tw (GDS) Tj-410.88 -12.96  TD 0  Tc (\(calma\)) Tj33.72 0  TD 0.0067  Tc -0.0067  Tw ( format, appending the suffix ) Tj131.4 0  TD 0.0342  Tc 0  Tw (.strm) Tj22.32 0  TD 0  Tc (.) Tj2.76 0  TD 0.0116  Tc -0.0116  Tw (  Or, if you target a different process, you will need to supply) Tj-190.2 -12.96  TD 0.0182  Tc -0.0182  Tw (different parameters to the ) Tj120 0  TD 0.0042  Tc 0  Tw (ostyle) Tj26.4 0  TD -0.0183  Tc 0.0183  Tw ( command.  \(See on-line magic manuals for more ) Tj220.68 0  TD 0.0236  Tc 0  Tw (info) Tj17.88 0  TD 0.0218  Tc (.\)) Tj-384.96 -32.64  TD /F1 11.04  Tf0.0166  Tc -0.0166  Tw (Importing CIF or ) Tj86.4 0  TD -0.0461  Tc 0  Tw (GDS) Tj22.56 0  TD 0.0288  Tc -0.0288  Tw ( Files into Magic) TjETendstream
+endobj
+13 0 obj
+7132
+endobj
+4 0 obj
+<<
+/Type /Page
+/Parent 5 0 R
+/Resources <<
+/Font <<
+/F0 6 0 R 
+/F1 8 0 R 
+/F2 10 0 R 
+/F3 14 0 R 
+>>
+/ProcSet 2 0 R
+>>
+/Contents 12 0 R
+>>
+endobj
+17 0 obj
+<<
+/Length 18 0 R
+>>
+stream
+BT72 696.84  TD0 0 0 rg /F2 11.04  Tf-0.0014  Tc 0  Tw (Magic) Tj28.2 0  TD 0.0061  Tc -0.0061  Tw ( can also convert files in the opposite direction.  To import a CIF file, invoke magic with no) Tj-28.2 -12.96  TD 0.0083  Tc -0.0083  Tw (filename and then do:) Tj36 -22.68  TD /F3 9  Tf0  Tc 0  Tw (:cif) Tj21.6 0  TD ( ) Tj5.4 0  TD (i) Tj5.4 0  TD (style) Tj27 0  TD ( ) Tj5.4 0  TD (lambda=0.6\(nwell\)) Tj-64.8 -12.84  TD (:cif) Tj21.6 0  TD ( read <filename>) Tj-57.6 -32.64  TD /F1 11.04  Tf0.0157  Tc -0.0157  Tw (Important Final Checks before Submitting a Design) Tj0 -25.68  TD /F2 11.04  Tf0  Tc -0  Tw (It is extremely wise to export your design to CIF, and then read it back into magic before doing final) Tj0 -12.96  TD 0.0061  Tc -0.0061  Tw (checks and submitting it for fabrication.  Magic does some \221sneaky\222 things behind the scenes, and the) TjT* 0.0015  Tc -0.0015  Tw (only way to be sure that what you send to ) Tj186.48 0  TD -0.0756  Tc 0  Tw (MOSIS) Tj33.48 0  TD 0.0108  Tc -0.0108  Tw ( is correct is to look at the design after it goes through) Tj-219.96 -12.96  TD 0.0237  Tc -0.0237  Tw (the export process.  \(T) Tj99.48 0  TD 0.0109  Tc -0.0109  Tw (ypical proble) Tj58.08 0  TD 0.0055  Tc -0.0055  Tw (ms encountered are behind-the-scenes modifications of wells that) Tj-157.56 -12.96  TD -0.0017  Tc 0.0017  Tw (create design rule violations, merging of wells that you don\222t want merged, and \221abutment\222 problems) Tj0 -12.96  TD 0.0164  Tc -0.0164  Tw (created where ) Tj64.56 0  TD 0.0236  Tc 0  Tw (subcells) Tj35.76 0  TD 0.0061  Tc -0.0061  Tw ( overlap.\)) Tj-100.32 -25.92  TD -0.0074  Tc 0.0074  Tw (Before you submit your company\222s design to me, you should export i) Tj306.24 0  TD -0.0104  Tc 0.0104  Tw (t to CIF, import it back into magic,) Tj-306.24 -12.96  TD 0.0129  Tc -0.0129  Tw (and then carefully check it for ) Tj135.84 0  TD -0.0461  Tc 0  Tw (DRC) Tj22.56 0  TD 0.007  Tc -0.007  Tw ( errors.  A good way to do the last step is to put magic\222s edit box) Tj-158.4 -12.96  TD 0.0072  Tc -0.0072  Tw (around the whole chip after importing, and then type ) Tj235.8 0  TD /F3 9  Tf0  Tc 0  Tw (:drc) Tj21.6 0  TD ( why) Tj21.6 0  TD /F2 11.04  Tf0.0028  Tc -0.0028  Tw (  \(or hit the \221y\222 key\).) Tj-279 -25.92  TD 0.0055  Tc -0.0055  Tw (Another critical check that should be made is to use the \221s\222 key command on each pad to check that all) Tj0 -12.96  TD 0.0154  Tc -0.0154  Tw (pads are properly connected to circuits inside the chip, and that power and ground are not shorted!) Tj0 -52.08  TD /F1 11.04  Tf0.0087  Tc -0.0087  Tw (Tech Files, Tech Codes, and Other Important Things) Tj0 -25.68  TD /F2 11.04  Tf0.0055  Tc -0.0055  Tw (The conversion of magic\222s internal data format into the CIF or ) Tj279 0  TD -0.04  Tc 0  Tw (GDS) Tj21.96 0  TD 0.0105  Tc -0.0105  Tw ( formats is controlled by the) Tj-300.96 -12.96  TD 0.0016  Tc -0.0016  Tw (Technology File that you specify when you invoke magic.  Traditionally, this has been the ) Tj402.12 0  TD -0.0047  Tc 0  Tw (\221scmos\222) Tj34.92 0  TD 0.0218  Tc -0.0218  Tw ( tech) Tj-437.04 -12.96  TD 0.0089  Tc -0.0089  Tw (file that you have been using, and this is the tech file that we will use.  However, if you ever need to) Tj0 -12.96  TD 0.0151  Tc -0.0151  Tw (design for a process not supported by this tech file \(such as one of the newer ) Tj341.28 0  TD -0.0057  Tc 0  Tw (submicron) Tj46.56 0  TD 0.0103  Tc -0.0103  Tw ( processes now) Tj-387.84 -12.96  TD 0.0053  Tc -0.0653  Tw (offered by ) Tj48.48 0  TD -0.0307  Tc 0  Tw (MOSIS\),) Tj39.96 0  TD 0.0179  Tc -0.0179  Tw ( you will need to use a different tech file and understand issues such as ) Tj316.56 0  TD -0.027  Tc 0  Tw (MOSIS\222s) Tj-405 -12.96  TD 0.0193  Tc -0.0193  Tw (\221Tech Codes\222.  Please see the ) Tj132.6 0  TD -0.0756  Tc 0  Tw (MOSIS) Tj33.48 0  TD 0.0023  Tc -0.0023  Tw ( web pages and the Magic user and maintenance manuals for) Tj-166.08 -12.96  TD 0.0131  Tc -0.0131  Tw (information on these topics.) Tj0 -51.96  TD /F1 11.04  Tf0.0083  Tc -0.0083  Tw (And Finally...  Things that go ) Tj141 0  TD /F0 18  Tf-0.003  Tc 0  Tw (bump) Tj42 0  TD /F1 11.04  Tf0.0014  Tc -0.0014  Tw ( in the night) Tj-183 -27.12  TD /F2 11.04  Tf-0  Tc 0  Tw (Submitting a chip design to ) Tj124.2 0  TD -0.0756  Tc 0  Tw (MOSIS) Tj33.48 0  TD 0.0117  Tc -0.0117  Tw ( is \(and should be\) a scary experience.  Similar to software design, a) Tj-157.68 -12.96  TD 0.0055  Tc -0.0055  Tw (single mistake \(like a short between Vdd and ) Tj201.96 0  TD -0.017  Tc 0  Tw (Gnd) Tj18.96 0  TD 0.0182  Tc -0.0182  Tw ( in the final layout\) can cause a whole chip to fail.) Tj-220.92 -12.96  TD 0.0071  Tc -0.0071  Tw (However, unlike software design, the time required to fix a chip is months instead of minutes, and the) Tj0 -12.96  TD 0.0052  Tc -0.0052  Tw (cost of remaking the chip is infinitely higher.  Hence, it is important to do as much checking and testing) TjT* 0.0079  Tc -0.0079  Tw (as possible within the limits of the design tools.  Check your design, and then recheck it again.  Do this to) TjT* 0.0092  Tc -0.0092  Tw (the last minute, so that you can rest easy during the cold dark nights of Winter while your chip is being) TjT* 0.0084  Tc -0.0084  Tw (fabricated, and you can be confident of working circuits in the Spring!) TjETendstream
+endobj
+18 0 obj
+5454
+endobj
+16 0 obj
+<<
+/Type /Page
+/Parent 5 0 R
+/Resources <<
+/Font <<
+/F0 6 0 R 
+/F1 8 0 R 
+/F2 10 0 R 
+/F3 14 0 R 
+>>
+/ProcSet 2 0 R
+>>
+/Contents 17 0 R
+>>
+endobj
+20 0 obj
+<<
+/Length 21 0 R
+>>
+stream
+BT72 709.8  TD0 0 0 rg /F2 11.04  Tf-0.0097  Tc 0.0097  Tw (Here are some examples of magic and CIF file) Tj0 -12.96  TD 0.0131  Tc -0.0131  Tw (formats.  The boxes below show the files corresponding) TjT* 0.0175  Tc -0.0175  Tw (to the hierarchical design at the right which consists) TjT* 0.0214  Tc -0.0214  Tw (of two copies of a cell called ) Tj130.2 0  TD 0.04  Tc 0  Tw (\221fet\222) Tj19.2 0  TD 0.0184  Tc -0.0184  Tw ( \(with one flipped) Tj-149.4 -12.96  TD 0.0071  Tc -0.0071  Tw (sideways\), and a small piece of metal 1 with label) Tj0 -12.96  TD 0.0073  Tc 0  Tw (\221Gnd\222) Tj26.4 0  TD 0.0073  Tc -0.0073  Tw ( in the top-level cell ) Tj91.2 0  TD 0.0226  Tc 0  Tw (\221twofets\222.) TjET1 1 1 rg 83.88 45.6 210.72 570.12 re f0 0 0 rg 83.88 45.6 0.48 570.12 re f83.88 615.24 210.72 0.48 re f294.12 45.6 0.48 570.12 re f83.88 45.6 210.72 0.48 re fBT87.96 601.32  TD0.0254  Tc -0.0254  Tw (File ) Tj20.04 0  TD -0.0143  Tc 0  Tw (\221twofets.mag\222) Tj-20.04 -23.4  TD /F3 9.96  Tf0.024  Tc (magic) Tj0 -10.56  TD (tech ) Tj30 0  TD (scmos) Tj-30 -10.56  TD (timestamp) Tj54 0  TD ( 944505883) Tj-54 -10.56  TD (<< ) Tj18 0  TD (metal1) Tj36 0  TD ( >>) Tj-54 -10.56  TD (rect) Tj24 0  TD ( 20 0 26 3) Tj-24 -10.56  TD (use ) Tj24 0  TD (fet) Tj18 0  TD 0  Tc 0.024  Tw ( ) Tj6 0  TD 0.024  Tc 0  Tw (fet_0) Tj-48 -10.56  TD (timestamp) Tj54 0  TD ( 944505650) Tj-54 -10.56  TD (transform 1 0 13 0 1 1) Tj0 -10.56  TD (box -13 -1 8 15) TjT* (use ) Tj24 0  TD (fet) Tj18 0  TD 0  Tc 0.024  Tw ( ) Tj6 0  TD 0.024  Tc 0  Tw (fet_1) Tj-48 -10.56  TD (timestamp) Tj54 0  TD ( 944505650) Tj-54 -10.56  TD (transform -1 0 33 0 1 1) Tj0 -10.56  TD (box -13 -1 8 15) TjT* (<< labels >>) TjT* (rlabel) Tj36 0  TD 0  Tc 0.024  Tw ( ) Tj6 0  TD 0.024  Tc 0  Tw (metal1) Tj36 0  TD ( 23 1 23 1 1 ) Tj78 0  TD (Gnd) Tj-156 -10.56  TD (<< end >>) Tj0 -39  TD /F2 11.04  Tf0.0254  Tc -0.0254  Tw (File ) Tj20.04 0  TD 0.0437  Tc 0  Tw (\221) Tj3.72 0  TD (f) Tj3.72 0  TD -0.0426  Tc (et.mag\222) Tj-27.48 -23.4  TD /F3 9.96  Tf0.024  Tc (magic) Tj0 -10.56  TD (tech ) Tj30 0  TD (scmos) Tj-30 -10.56  TD (timestamp) Tj54 0  TD ( 944505650) Tj-54 -10.56  TD (<< ) Tj18 0  TD (polysilicon) Tj66 0  TD ( >>) Tj-84 -10.56  TD (rect) Tj24 0  TD ( -3 6 0 8) Tj-24 -10.56  TD (rect) Tj24 0  TD ( 4 6 6 8) Tj-24 -10.56  TD (<< ) Tj18 0  TD (ndiffusion) Tj60 0  TD 0  Tc 0.024  Tw ( ) Tj6 0  TD 0.024  Tc 0  Tw (>>) Tj12 0  TD (rect) Tj24 0  TD ( 0 8 4 11) Tj-120 -10.56  TD (rect) Tj24 0  TD ( 0 3 4 6) Tj-24 -10.56  TD (<< ) Tj18 0  TD (metal1) Tj36 0  TD ( >>) Tj-54 -10.56  TD (rect) Tj24 0  TD ( -13 12 0 15) Tj-24 -10.56  TD (rect) Tj24 0  TD ( -13 5 -7 9) Tj-24 -10.56  TD (rect) Tj24 0  TD ( -13 -1 0 2) Tj-24 -10.56  TD (<< ) Tj18 0  TD (ntransistor) Tj66 0  TD ( >>) Tj-84 -10.56  TD (rect) Tj24 0  TD ( 0 6 4 8) Tj-24 -10.56  TD (<< ) Tj18 0  TD (polycontact) Tj66 0  TD ( >>) Tj-84 -10.56  TD (rect) Tj24 0  TD ( -7 5 -3 9) Tj-24 -10.56  TD (<< ) Tj18 0  TD (ndcontact) Tj54 0  TD ( >>) Tj-72 -10.56  TD (rect) Tj24 0  TD ( 0 11 4 15) Tj-24 -10.56  TD (rect) Tj24 0  TD ( 0 -1 4 3) Tj-24 -10.56  TD (<< ) Tj18 0  TD (psubstratepcontact) Tj108 0  TD ( >>) Tj-126 -10.56  TD (rect) Tj24 0  TD ( 4 -1 8 3) Tj-24 -10.56  TD (<< labels >>) Tj0 -10.56  TD (rlabel) Tj36 0  TD 0  Tc 0.024  Tw ( ) Tj6 0  TD 0.024  Tc 0  Tw (metal1) Tj36 0  TD ( -13 12 -13 15 4) Tj-78 -10.56  TD (drain) Tj0 -10.56  TD (rlabel) Tj36 0  TD 0  Tc 0.024  Tw ( ) Tj6 0  TD 0.024  Tc 0  Tw (metal1) Tj36 0  TD ( -13 5 -13 8 3 gate) Tj-78 -10.56  TD (rlabel) Tj36 0  TD 0  Tc 0.024  Tw ( ) Tj6 0  TD 0.024  Tc 0  Tw (metal1) Tj36 0  TD ( -13 -1 -13 2 2) Tj-78 -10.56  TD (source) Tj0 -10.56  TD (<< end >>) TjET1 1 1 rg 333.24 626.4 174.24 88.8 re fq 164.76 0 0 -81.48 336.84 711.6 cm /im1 Doendstream
+endobj
+21 0 obj
+3908
+endobj
+23 0 obj
+<<
+/Type /XObject
+/Subtype /Image
+/Name /im1
+/Filter /FlateDecode 
+/Width 721
+/Height 357
+/BitsPerComponent 8
+/ColorSpace [ /Indexed /DeviceRGB 255 22 0 R ]
+/Length 24 0 R
+>>
+stream
+HâÏWãrÎ:cÔŒd€ÕiOÛˇ?ªy¯!âîD2≤lÎú4±≠D¢Ä¬0 Ñ˛ „Ä˛˘¯ F
+ì†ˇ¿˘
+˙#¬rLÛÒ/ 
+≥Fi—¨B–A◊h"hZ∞öBAÔ}?ø£˜ø…˚o2˙Øp6>ÛÔ$&4iM±†Q®£T,h zµÁ‡@·Øÿªj©á†CÆöRA£PG©T–îÙ¸ä√°Qá´_ÆQ´†Q®£îV–≈»±{(‘R∫»Q|(D°éR∫á¬PÌì¢_"áC£Vø/çÆ*U˙#4‡F∫{ø_˛êªT	˙Ctàu*h 8∏FÇ˛Ä†ÅÉbÙá(h 8= h`(î"« NQ–k¿ﬁ{y `É$h¢I—4p6Ç&öAg4—¢h8ò†âVEC–¿Ÿê
+ö@–¿Èêö"@–¿ŸÄáB`(@–¿PÄ†Å° ACÇÜÇ Ë4p6$ÇN±˜Ú ¿
+â†#@–¿Ÿ ACÅ	zç4p>pAœA'Ñ‡–ã¶!h‡tÄCC840‡–¿PÄCC840‡–¿PÄCC840‡–¿PÄCC840‡–¿PÄCC840‡–¿Px◊°? †<Ç∂9Ùﬁˇ*ÙpËÀıLEﬂÙ}1÷˝;?tΩ¸|U_◊üüÂı¯éœÔø£ô˜˛__ªÛa™>Ωwó∂¢ãô˘˚x˙∫´ÏÎÁR}≠B§´[–èÔ.øSüÛπ6g_ªÛa*84/˙∂2ˇ¸∆œ]5˜W≠V–„ÂÙÛ€3Í≥>WÁÎkw>LáÊE#Ûœ±4ÎF´Ëß"˝Ç≠”Ûó≥Ø›˘0ö}€òü∆OIµñfÁ†J¡NAO	|˛≠⁄ú”⁄º}ù©‡–ºËbb~GØ¥J’4˚!˝º-Ë˘7™	zZìªØ3ö}[ò_Fáw˜j‚òÛ¬ë#¯Eﬁò2¥£Ø›˘0ö•újxeh≠¢ó¸˚û†ßﬂ—È˘ÀŸ◊Ó|ò
+Õã8´uﬁø)I¨πWú~›Çéíxiæ`]æævÁ√Tph^$ÒZ„˝·–sj•b¢}ÿ≤F–7ç†üøUJ–¡Zú}ÌŒá©‡–ºHf∂Ã˚7Iwy1q,Å°9 Ç˛	Sá"o⁄ÿ◊Ó|ò
+ÕãJ\Áx_3t≠B5f}{B#Ë‚Otç≤k/ˆµ;¶ÇCÛ¢<ªÖ+îIÆÈk	Ø4ÌsËË7ÆŸπí5y˛O·–√9tN…yä”+eR-m Ë¸\—±ªØ3öW ¥Ã<U∫€Ày£IÜŒß∂"__ªÛa*84/ñ°%ÊŸ9ñ°%ï—Û©P'ËAÁÁä Ÿ◊Ó|ò
+ÕãÛ¨:SI∞s≤é”Ø[–—Ô‰ÊJ÷„Îkw>LáÊ≈úL∏so#ûbI<}{‚˘·∫¸ﬂüÊ£T–˘π¢ó≥Ø›˘0öW˝N,é®ﬁı_GR‰∏-ê]„ë#;W9C+˚⁄ùS¡°y	Ns->M±ùÍj˛Ã=ôÛj”â†gÔŒ	:?W9CÎ˙⁄ùS¡°yâºlgÆ≥'Ÿ˘zú~i—Î5ñv,ËÎ5GIœÕï¨≈€◊ô
+ÕKt≤ïoô˜áìÒ}ˇÔHﬁø$AØè{í†óÎ9AÁÁä^ÓæŒTph^f'∆≥W•ª¸r˜_Ø≤»q-ehA–BÜñÊ™ghE_ªÛa*84ØåìΩ8œÒ.gËY_°∆∏†Øo
+:?W=C◊˚⁄ùS¡°yeπΩ≥^∏&§÷9—Ü◊‚ÙÎtÙ;ππíu¯˙⁄ùS¡°yeù¨‡cOáñSÙ›3£„¨†o/ÿùõ7y9˚⁄ùS¡°yπ:õ9≤â√/ËlÊ(¨áf>∂uÜ^¥Õ»∫^ph^9n©xw¶lÇ~ºØ…6NøyAﬂR%ﬂA'I<7W¸r˜u¶ÇCÛ 8%Ô‹…§‰J…˚óR–◊5Ãa‰öt~ÆËÂÓÎLáÊ%3K¬ßËz6oƒüÑ»qãî<øÖÁ_⁄Ædh>ó&CW˚⁄ùS¡°yâNFôœ´ìïıúQ4]cãñÏö_3¥4W=C◊˚⁄ùS¡°yIºR·hqhûZÖ4ß_äˆb∑.
+:˙ù‹\Iö˜ıµ;¶ÇCÛú,eZ`ûxj%Òò	zy‹ªïıút~ÆËÂÏkw>LáÊ≈YUù)ÊçıèÛC_Mœ•≠ö›◊◊Ó|ò
+Õã9Y˝^}2¥îcô¢iÕ59ó2tnÆrÜ÷ıµ;¶ÇCÛR‹á•ªuöXÖ˚≈“/ú±$.œï{˚:S¡°yëÜwvû‚ƒJ,QœÁ€:?WtÏÓÎLáÊE*ﬁô™y„Ur‰0
+öehπí5i;ÅCW}*Pû›Û§”srç|+tŒÂÍ´ÒÓnåN}*êí˜¯*“k>];ÌõÀ◊W„››ph“Ú]ß5≠íòh≈ÎnávÕÂÍ´ÒÓn84©yGê*§#‹ÌôÀ◊W„››ph“Ûå!Ω∆Ç1ofh„\ÆæÔÓ∆ËÁ–∑'¶S·ÁÁ—„œÎcxv=ä∆o2æé"!µÊ_sÚu
+⁄7óØØ∆ª+°°6z9ÙmF–¿-Í&]¥0æì§…¬˚2é^Iïäâv}M„úÇvŒÂÎkk4’F/á^gO˛NóÊ%ÖˇßÈ»^ä&ÔÛHRgÄ0	ºì°Õs˘˙jºªMµ—œ°É≈á´ç€	Õ∆_z	⁄∆˚4ñlõ∆æë°sπ˙jºªMµ—/CØÛ∆ãW$i∑_z~ÅåºøFSêVuØGv;¥g.__çw7è&⁄ËÂ–À¸g¥ï˜Á¯ªkí*—ÆØ˚x∑CªÊrı’xw≥h£çû=gw˚¢„«Ü≠AfﬁÃì)ÃI¿Î–Æπ|}5ﬁ]Õ¥—Õ°ÉY/h;ÔwÊ…Æ±ª úÇˆÕÂÎ´ÒÓ
+h©ç^ —}[È&Ëéh∞¬ËG=Ò¶+¥†©6z9t~«Ùß≥éé£ˆ’T˝öØSZÊ-Y5ﬂ«‰˝}¥Ø¶⁄ËÁ–¡ö¬ø|—|L4~{’…ﬁ≈Q˚j™ç^Ω§˜πÖ‡sºË†?q|ì˜˜q‘æZj£óC«—?<‡9)\iÖ˙B·®Nˆ.é€WCmtsË3·®ºøãQ˚
+—œ°œÉ„:Ÿ{µØph£Ú>j_!‡–£:Ÿ®}EÄCï˜Q˚
+áÊ’…FÌ+Z¿®ºè⁄W84«®N6j_‡–FÂ}‘æB¿°9Fu≤Q˚ä á0*Ô£ˆÕ1™ìç⁄W8¥ÄQyµØphéQùl‘æ"¿°å ˚®}ÖÄCsåÍd£ˆ-`TﬁGÌ+öcT'µØph£Ú>j_!‡–£:Ÿ®}EÄCï˜Q˚
+—«°Øó¶E.®˜dT'€∏/'+çµ—…°€ÆöËœ≈\õ+˙¯ÿ∂//+mµqNá˛cﬂª˚w¥Ã¿°}Ìc•±6ŒÈ–Ûﬁ›«√°7vh'+mµqRá∂Ó›ÛZf‡–Náv±“Xguh€ﬁ=«¬°7wh+mµqZá∂Ï›4^À⁄Ì–Vk££Cﬂh≤j∫òˆnáÓ‡–Vä\?Ec—F7áæÕh†h˙cŸªe¥ñ8Ùmf•ƒÙ"Ω6z9Ù¨‰&MÈÆhv›«°Õ¨ı<ΩÎµ—À°ó5µP4Ò}©Ô∫ìCY)ºh≈†Ëé⁄º∂lë¥3µùÉC˜rh#+
+∆.ÿ-CøRÙ≤∂)MØGó`L≠HﬁõÚŒ¡°ª9¥âï2◊/ù,yı©éı(”›°ßtˇö{z>º≠GÎŸ∫áSi∑r;wˇ÷ïıøg}ﬂKøÿ}˚
+ã≤;_f•¶ÁßN"-GÎŸ≈ª9ÙÏ»”ˇÿ-¸œä}∫Æh ÔO·
+m´ÁœCËπ§Ëˆ}EÂd•¢Án((ıÈE—›:ö?I±ÆÎââJ;î=osË∂º˜Cﬂæ≤m`•¿t§ì$iƒ⁄Yﬁ{9Ù‚∫·⁄b%Îì∫WÚﬁ±Q€ÍπtoÓâû}ZÕJ]œìNøõù9˘N/áN◊&¸ó’≥s∆°ÂΩcÁ,›ö˜~Ë€W¡°’¨‰yN]P∏ü3‹«°ŸÛÍ|N˜T»wJuf[=ü¡°[˜Uth%+já^≥tr.z*‹«°ìg”Ã⁄Ù-‹…∏;Ë∫=Ô˝–∑Ø¢C+Y—:Ù™êíÓ‰–ÀZ§ªá√°”ΩGl´Á„;t˚æ*≠bEÔ–ã¶#L∆ÓÂ–…û∏6ãC«ª%>èX2tkﬁ˚°o_áV±¢wËËl∆{9tp◊`JñèåÓWÊ˙∂z˛<ÑûÀ∫u_UáV∞RbzÕß5µ,⁄ÔÂ–ó˘)0\{nΩ≠´7;Ù∫cÚŒ∫-Ô˝–∑Ø™C+X)0Ω("p¡[™‰[†§é=%˙$ﬂO+å>UıúqËyœ≤W∑’ÛÒ3t˚æ]e•»Ù§ç’ÒVGå?-wın=ªÛ¨◊0›Ø*æ’ÛFﬁ°_ªñ€9ìC∑ÊΩ˙ˆ•pË*+UEØ)tUJ®‚»˚9tq’
++˙±oÖk€Í˘›∫/ïCWX11TÊNﬁ—°ÕkÀV÷
+N`qËˆº˜CﬂæT]a≈©Ëå¬°[Ò~|ánﬂ⁄¥∂lmü°[Ûﬁ}˚R9Ù;⁄ÏÇáphkÂváä˜7CÜˆ˛y=ó3tÎæT]a•±6·–÷ x%Ôo9t[ﬁ˚°o_
+áÆ≤“V94	ü‹Ì…õG–sÕ°€ˆ•pË*+çµ1éCSÊ≥À°[Ûﬁ}˚™:¥Çï∂⁄∆°©pdvhÔgpË÷}UZ¡Jcmå‚–È^	{ßwËˆº˜Cﬂæ*≠b•≠6qh’ômı||ánﬂW≈°UgkcáÆﬂÌL›û˜~Ë€W—°ï¨¥’∆->m˚›∂z˛<ÑûÀ∫u_EáV≤“X#8¥ºsÏºÕ°€Úﬁ}˚*8¥öï∂⁄¿°s;ó^19¥'oAœ5án€W¡°’¨4÷∆˘:øsIY∫5Ô˝–∑Ø¨CóX°òï∂⁄8ΩCóıç‘j‚”YG«∆}9Yi¨ç≥;tÕüÉÎjA™Á≠˚Ú≤“V'wËzﬁ∆jôÅCøÈ–&Vk„‹≠…œÀ8t'á6≤“Vßvh›Û‡2ZÀ˙-á6≤“Xgvh›Œ-„‡–]⁄ÃJ[múÿ°µ;7èÑC˜ph3+çµÒˇˆÀvKm¢b73rÊÑºˇÀ.‡/…-ÉZÿn∫˜ﬁŒ∞GE’∆oC∑øs„Z˙ÑÜÓpeﬂl∏mhÕ;7¨¶°èoËWvŒÜ◊Ü÷Ωsèı4Ù·›Â æŸp⁄–⁄wÓ˛ﬁ—–G7tó+;g√gCÎﬂπ€{GC‹–ùÆÏõü›G´34t_C˜±s6Njh_ƒÃs\]9Á4Ù=⁄óÆ∫BTﬂ£Í °°%Qõ,™Æ∫BTﬂ£Í °°%Qõ,™Æ∫BTﬂ£Í °°%Qõ,™Æ∫BTﬂ£Í °°%Qõ,™Æ∫BTﬂ£Í °°%Qõ,™Æ∫BTﬂ£Í °°%Qõ,™Æ∫BTﬂ£Í °°%Qõ,™Æ∫BTﬂ£Í 9±°ˇﬁ∏?œßì√—ÔÂa>∑¨9ô®MÊIWwXŒkËø÷{úè~P†˘Æ√èÆ˛∞ú÷–”.÷˚êGÕÌ©…4¯—ıFXNkËÒ{îGÕÌ∆w-ntΩñ≥:˚ÿ®Ì„£Ìß…t∏—ıNXŒjËÕ=˛GÕÌ≈w5^tΩ„Ü.æ∑~J†›4ô7∫ﬁ	ãqCOﬂ\?*–^|W„E◊;a±nËyõOˆx6nöLâ]ÔÑ≈º°ÂQÛ@ß.å6´¿çÆw¬rVCOˇ„¸ÎUn§‹c~ÃÄî~æ’„ —~tΩñ≥˙{∫üü˜Qﬁ‡ó{\ŒXê~ÙŒﬂ˛ç’võÒ£Îç∞ú÷–”∂Ê›ª]˝Íe«HﬂjÁoÎ⁄èÆ˛∞ú÷–”/”ÚÎµ|Æî)√9≥8ﬂõLÎ¸„_ÿm∏O∫∫√r^Cœ;mîdG˙V:ˇXÎ –ÓtuÑÂƒÜÓﬁ„Ÿ§ùÛ„zÎmøƒüÆ”}PCHÿ”∑ ˘qùÉ@ª”’ñèjËO	Ùè∆˘yµı∂_‚O◊iÅ˛_4tõÛÛÅvßÀCC; IW_˚Ó®°£È*8Ω°êjææÚ›SC”U@CKR›ŸÁæ;h≤®∫
+hhI⁄ÚˆôÔö,™ÆÇì˙∑ßI€Ó>9Û˘∆wÍ2˜C5Á4¥µJ›§g˛nwËN]÷~®ÜÜñ≥v∫ÓºXµC‰é•Sóπ™°°Â§WWè9tß.k?TCCÀë>7Ÿ!r«“©À‹’––rDìU>áe∑9tß.k?TCCÀy˝I\]±C‰é•Sóπ™°°ÂTö¨Ù∫˙m A†;uY˚°ZN’◊ÃÌçÛ;DÓX:uô˚°ZNµ…øÎæ{mË]÷~®ÜÜñ≥·ÏË¯ÊŸ"w,ù∫Ã˝P-g£…œ∑|˜€–/uY˚°ZŒ¶∑7◊üú€!r«“©À‹’––r6õÏIèπnË∫¨˝P-áÜ¶°ü¶°πá˛¸°°Âlyõû~:;tü.s?TCCÀŸh≤¥˙;JCø‘eÌájhh9ugSÂYÑÜ~©À‹’––r™Mñ6û{oË]÷~®ÜÜñSÛ5=yÂπ°tô˚°ZN•…÷NWúwËN]÷~®ÜÜñ#]m:≤C‰é•Sóπ™°°Âà&{˝YÌ≥°uY˚°ZN√ÁpÌ”zá»Kß.s?TCCÀI-æã„›©À⁄’––rRìÔÎ3›ßÀ‹’––rRõÔ´s›©À⁄’––rR£ÔÂYÅÓ”eÓájhh9©’˜‚ºÉ@wÍ≤ˆC54¥ú‘Ï{æ¬A†˚tô˚°ZNj˜=[„ –ù∫¨˝P-')|_V9tü.s?TCCÀIﬂÁu›©À⁄’––rí ˜i•É@˜È2˜C54¥ú§Û}\Î –ù∫¨˝P-')}V;tü.s?TCCÀIZﬂÎ∫Sóµ™°°Â$µÔwÁ∫Oóπ™9ß°N£'–⁄Ü8ç„‡£x∑°>
+BACC(hh°†°!44ÑÇÜÜP––
+BACC(hh°†°!44ÑÇÜÜP––
+BACC(hh°†°!ï@OhátÅoh≈*–k¨∑†É@C(VÅæhF%–ÈÅèhÅÜPhÅÜP¨ù
+4xc›–yûihpá∏Â»ÚL†¡Úz…3Åw•BQ	Ùe 3Åw‘}ÛL†¡’@Oh∆*– Ó!–
+° –JÆ◊˚√üÎ|x1ΩéOÜS√À·¿u˘…ñèóiΩ&4@†ïå˘,∫˙3-+ÇºÙúŸÊkBZ…T¶◊U¯˛‘ß®ä¨^óSÌ◊Ñ¥íz¯Æ´ŒmÙıY†≈5°≠‰Z§r˚ñc…£¥∏çhº&4@†uåﬂ‰Êù≤'èuŸ_Ø›zMhÄ@+ë·∫÷NeÅ^˝\óﬁæEÆ^ –J*	[µÚxl™⁄1∏√Å,–ÛπÊkBBA†!K†¯á@√«í^ Wh¯`.ˇ§ıkπB˙kº‘◊;% 7Ó±\∏zıZÆê=§8œÛÂ2><û‹Á”ÛÒÏ`/Ó±n%Ê@œ7≠Å~$zïÁKËÀ•˙sY∞µ@èŸÕ=úù".Ô°ø ˚ç)∆√Ò3/˘ıãäÜ}©‹rT˝»Ú#’ı@â^.˙,–ó¨ô…3ÏLc†ˇY:º⁄–∑4gﬂ_4tn≈ö÷@èw˜–_e¢≈ÕÚ≥P€ËÜ†Ï—–”˝ÛÚùP§¯Ÿ#¿~ÏpΩ|\]ˇø.ıÁ ªQÙƒË°ùß#e†ó<œâﬁJkV»°-–˘ä⁄óBÄ°ËU|	48‚Rí÷ØÂ
+¡ –ä%– 1 –
+°∏ ∑@"˝»a
+endstream
+endobj
+24 0 obj
+6053
+endobj
+22 0 obj
+<<
+/Length 25 0 R
+/Filter /ASCII85Decode 
+>>
+stream
+!!!$!s8U!S_f^*E!!%WJ'LBpcbMQT26.\EGU2d2bAUUHQU+j;aU8F6FWd.G]bNJ'_
+pB1HrzzzzzzzzzzYNU6*d0m/ApS'JDqo%8p3^Z;18R,1q:eaB"CihO#0MkJCYNY$I
+!"Z9rN)s7F:IIrW>Z1W!9`P.oYNN.c.Sd21`rH)Mqo$sekJmQ&&"WbHpHj'(!"es_
+pA=[d^8/+9!<`B&J7(&n?n_SG]-(K8*+1H#Q+J0QUti0=553c,YN[H7:e\U!g].<S
+!!!"/QJc8=i+&).pT?Sc0E;(Q!+V>QpTE7\QJhMkhIDl0A!Z&^R2ksQj8]R6s8W*)
+(-V]u6t=[7!!"/9K#h=R!+XIh!!#Ce!!$NWn6dpM!!#7a!$GZ'!0t/=pOFZ"0Mh`L
+5kfr%?n_Q\!'maOaCEZJ!!!'#!fF2Ff_;Mi?n_Q\!$D7A5khD_!!"!J?Hcp-o_1[r
+pHj(6da\$#,5_3:@U@:Q[n:+9bQ%ViA(&j,!>Atke,TIq!!"@2]-+<B5kiY6!!!0&
+K)krP!*hQP6r$<Y;ccdi7<<9e2*iom9iUl-63'_+!!!$"!!qcg!<rN(YN`7k!!$N2
+[*hbN!)4a>!!2k%O^eAsdSKpQ?H`BL!!!!qpClNd9dKc>!!#_>dSKqlz!<=5B!"],1
+!!33%z!!!$"z!/(MV!.P'gH/&H$!%.aH:B6'O!C%n3=:Q/qBmK1JJ3X,8!!%KM58PXp
+H:1"!DZBb;!WW;q&k)eQ!V_n*pHj*$q>g8UQ2CCX!!!0&K)t_50D@eWqt^<eQW*qb
+!<@`QQ+J0Bl<*d`0_^s\A't>WK)m-4Qb`\j+_W>*!!N?&!<@`Q!!!'#!!#hKT)\ik
+!!'A+!!3-#$ig8-!!!$E0il#ag]2s-!!#:YR*T9ibTsWY+Zq'XmmsYI^`bh[~>
+endstream
+endobj
+25 0 obj
+936
+endobj
+26 0 obj
+<<
+/Length 27 0 R
+>>
+stream
+Q 310.56 42.12 225.84 577.08 re f0 0 0 rg 310.56 42.12 0.48 577.08 re f310.56 618.72 225.84 0.48 re f535.92 42.12 0.48 577.08 re f310.56 42.12 225.84 0.48 re fBT314.64 604.8  TD/F2 11.04  Tf0.0254  Tc -0.0254  Tw (File ) Tj20.04 0  TD 0.0437  Tc 0  Tw (\221) Tj3.72 0  TD 0.0246  Tc (twofets.cif\222) Tj50.88 0  TD 0  Tc -0.0403  Tw ( generated using ) Tj75.12 0  TD -0.0047  Tc 0  Tw (\221scmos\222) Tj34.92 0  TD 0  Tc ( ) Tj2.76 0  TD 0.0218  Tc (tech) Tj-187.44 -12.96  TD 0.0268  Tc -0.0268  Tw (file with ) Tj40.08 0  TD 0.0391  Tc 0  Tw (\221cif) Tj15.48 0  TD 0  Tc ( ) Tj2.76 0  TD 0.0042  Tc (ostyle) Tj26.4 0  TD 0  Tc ( ) Tj2.76 0  TD 0.0062  Tc (lambda=0.6\(nwell\)\222) Tj88.2 0  TD 0  Tc (.) Tj-175.68 -22.68  TD /F3 9  Tf(\( ) Tj10.8 0  TD (@@user) Tj32.4 0  TD ( : ) Tj16.2 0  TD (wkuhn) Tj27 0  TD ( \);) Tj-86.4 -9.6  TD (\( ) Tj10.8 0  TD (@@machine) Tj48.6 0  TD ( : ) Tj16.2 0  TD (wireless.eece.ksu.edu) Tj113.4 0  TD ( \);) Tj-189 -9.6  TD (\( ) Tj10.8 0  TD (@@source) Tj43.2 0  TD ( : ) Tj16.2 0  TD (twofets.mag) Tj59.4 0  TD ( \);) Tj-129.6 -9.6  TD (\( ) Tj10.8 0  TD (@@tool) Tj32.4 0  TD ( : Magic 6.5 \);) Tj-43.2 -9.6  TD (\( ) Tj10.8 0  TD (@@patch) Tj37.8 0  TD ( : 0 \);) Tj-48.6 -9.6  TD (\( ) Tj10.8 0  TD (@@patchnames) Tj64.8 0  TD ( : ) Tj16.2 0  TD (release-6.5b1,) Tj75.6 0  TD ( ) Tj5.4 0  TD (linux1,) Tj-172.8 -9.6  TD (\( ) Tj10.8 0  TD (@@compiled) Tj54 0  TD ( : ) Tj16.2 0  TD (Thu) Tj16.2 0  TD ( ) Tj5.4 0  TD (Jul) Tj16.2 0  TD ( 29 17:12:51 ) Tj70.2 0  TD (CDT) Tj16.2 0  TD ( ) Tj-205.2 -9.6  TD (\( ) Tj10.8 0  TD (@@technology) Tj64.8 0  TD ( : ) Tj16.2 0  TD (scmos) Tj27 0  TD ( \);) Tj-118.8 -9.6  TD (\( ) Tj10.8 0  TD (@@version) Tj48.6 0  TD ( : 8.2.8 \);) Tj-59.4 -9.6  TD (\( ) Tj10.8 0  TD (@@techdesc) Tj54 0  TD ( : ) Tj16.2 0  TD (MOSIS) Tj27 0  TD ( ) Tj5.4 0  TD (Scalable) Tj43.2 0  TD ( ) Tj5.4 0  TD (CMOS) Tj21.6 0  TD ( ) Tj-183.6 -9.6  TD (\( ) Tj10.8 0  TD (@@style) Tj37.8 0  TD ( : ) Tj16.2 0  TD (lambda=0.6\(nwell\)) Tj91.8 0  TD ( \);) Tj-156.6 -9.6  TD (\( ) Tj10.8 0  TD (@@date) Tj32.4 0  TD ( : ) Tj16.2 0  TD (Mon) Tj16.2 0  TD ( ) Tj5.4 0  TD (Dec) Tj16.2 0  TD (  6 13:08:15 1999 \);) Tj-97.2 -9.6  TD (DS 1 30 2;) Tj0 -9.6  TD (9 ) Tj10.8 0  TD (twofets;) Tj-10.8 -9.6  TD (L ) Tj10.8 0  TD (CMF;) Tj-10.8 -9.6  TD (    B 24 12 92 6;) Tj0 -9.6  TD (94 ) Tj16.2 0  TD (Gnd) Tj16.2 0  TD ( 92 4 ) Tj32.4 0  TD (CMF;) Tj-64.8 -9.6  TD (C 2 R 1 0 T 52 4;) Tj0 -9.6  TD (C 2 ) Tj21.6 0  TD (MX) Tj10.8 0  TD ( R 1 0 T 132 4;) Tj-32.4 -9.6  TD (DF;) Tj0 -9.6  TD (DS 2 30 2;) TjT* (9 ) Tj10.8 0  TD (fet;) Tj-10.8 -9.6  TD (L ) Tj10.8 0  TD (CMF;) Tj-10.8 -9.6  TD (    B 68 12 -18 54;) Tj0 -9.6  TD (    B 16 4 8 46;) TjT* (    B 40 16 -32 28;) TjT* (    B 32 4 16 10;) TjT* (    B 84 12 -10 2;) TjT* (L ) Tj10.8 0  TD (CPG;) Tj-10.8 -9.6  TD (    B 16 4 -20 34;) Tj0 -9.6  TD (    B 52 8 -2 28;) Tj0 -10.92  TD (    B 16 4 -20 22;) Tj0 -9.6  TD (L ) Tj10.8 0  TD (CAA;) Tj-10.8 -9.6  TD (    B 16 48 8 36;) Tj0 -10.92  TD (    B 32 16 16 4;) Tj0 -9.6  TD (L ) Tj10.8 0  TD (CCA;) Tj-10.8 -9.6  TD (    B 8 8 8 52;) Tj0 -9.6  TD (    B 8 8 8 4;) TjT* (L ) Tj10.8 0  TD (CCA;) Tj-10.8 -9.6  TD (    B 8 8 24 4;) Tj0 -9.6  TD (L ) Tj10.8 0  TD (CCP;) Tj-10.8 -9.6  TD (    B 8 8 -20 28;) Tj0 -9.6  TD (L ) Tj10.8 0  TD (CSN;) Tj-10.8 -9.6  TD (    B 32 56 8 40;) Tj0 -9.6  TD (    B 24 24 4 0;) TjT* (L ) Tj10.8 0  TD (CSP;) Tj-10.8 -9.6  TD (    B 16 8 32 16;) Tj0 -9.6  TD (    B 24 24 28 0;) TjT* (94 drain -52 54 ) Tj86.4 0  TD (CMF;) Tj-86.4 -9.6  TD (94 gate -52 26 ) Tj81 0  TD (CMF;) Tj-81 -9.6  TD (94 source -52 2 ) Tj86.4 0  TD (CMF;) Tj-86.4 -9.6  TD (DF;) Tj0 -9.6  TD (C 1;) TjT* (End) TjETendstream
+endobj
+27 0 obj
+3840
+endobj
+19 0 obj
+<<
+/Type /Page
+/Parent 5 0 R
+/Resources <<
+/Font <<
+/F2 10 0 R 
+/F3 14 0 R 
+>>
+/XObject <<
+/im1 23 0 R 
+>>
+/ProcSet 2 0 R
+>>
+/Contents [ 20 0 R 26 0 R  ]
+>>
+endobj
+6 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/Name /F0
+/BaseFont /TimesNewRoman,BoldItalic
+/FirstChar 31
+/LastChar 255
+/Widths [ 778 250 389 555 500 500 833 778 278 333 333 500 570 250 333 250 
+278 500 500 500 500 500 500 500 500 500 500 333 333 570 570 570 
+500 832 667 667 667 722 667 667 722 778 389 500 667 611 889 722 
+722 611 722 667 556 611 722 667 889 667 611 611 333 278 333 570 
+500 333 500 500 444 500 444 333 500 556 278 278 500 278 778 556 
+500 500 500 389 389 278 556 444 667 500 444 389 348 220 348 570 
+778 500 778 333 500 500 1000 500 500 333 1000 556 333 944 778 778 
+778 778 333 333 500 500 350 500 1000 333 1000 389 333 722 778 778 
+611 250 389 500 500 500 500 220 500 333 747 266 500 606 333 747 
+500 400 549 300 300 333 576 500 250 333 300 300 500 750 750 750 
+500 667 667 667 667 667 667 944 667 667 667 667 667 389 389 389 
+389 722 722 722 722 722 722 722 570 722 722 722 722 722 611 611 
+500 500 500 500 500 500 500 722 444 444 444 444 444 278 278 278 
+278 500 556 500 500 500 500 500 549 500 556 556 556 556 444 500 
+444 ]
+/Encoding /WinAnsiEncoding
+/FontDescriptor 7 0 R
+>>
+endobj
+7 0 obj
+<<
+/Type /FontDescriptor
+/FontName /TimesNewRoman,BoldItalic
+/Flags 16482
+/FontBBox [ -250 -218 1200 902 ]
+/MissingWidth 774
+/StemV 132
+/StemH 132
+/ItalicAngle -11
+/CapHeight 902
+/XHeight 631
+/Ascent 902
+/Descent -218
+/Leading 165
+/MaxWidth 1000
+/AvgWidth 414
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/Name /F1
+/BaseFont /TimesNewRoman,Bold
+/FirstChar 31
+/LastChar 255
+/Widths [ 778 250 333 555 500 500 1000 833 278 333 333 500 570 250 333 250 
+278 500 500 500 500 500 500 500 500 500 500 333 333 570 570 570 
+500 930 722 667 722 722 667 611 778 778 389 500 778 667 944 722 
+778 611 778 722 556 667 722 722 1000 722 722 667 333 278 333 581 
+500 333 500 556 444 556 444 333 500 556 278 333 556 278 833 556 
+500 556 556 444 389 333 556 500 722 500 500 444 394 220 394 520 
+778 500 778 333 500 500 1000 500 500 333 1000 556 333 1000 778 778 
+778 778 333 333 500 500 350 500 1000 333 1000 389 333 722 778 778 
+722 250 333 500 500 500 500 220 500 333 747 300 500 570 333 747 
+500 400 549 300 300 333 576 540 250 333 300 330 500 750 750 750 
+500 722 722 722 722 722 722 1000 722 667 667 667 667 389 389 389 
+389 722 722 778 778 778 778 778 570 778 722 722 722 722 722 611 
+556 500 500 500 500 500 500 722 444 444 444 444 444 278 278 278 
+278 500 556 500 500 500 500 500 549 500 556 556 556 556 500 556 
+500 ]
+/Encoding /WinAnsiEncoding
+/FontDescriptor 9 0 R
+>>
+endobj
+9 0 obj
+<<
+/Type /FontDescriptor
+/FontName /TimesNewRoman,Bold
+/Flags 16418
+/FontBBox [ -250 -222 1200 915 ]
+/MissingWidth 778
+/StemV 136
+/StemH 136
+/ItalicAngle 0
+/CapHeight 915
+/XHeight 640
+/Ascent 915
+/Descent -222
+/Leading 180
+/MaxWidth 1000
+/AvgWidth 427
+>>
+endobj
+10 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/Name /F2
+/BaseFont /TimesNewRoman
+/FirstChar 31
+/LastChar 255
+/Widths [ 778 250 333 408 500 500 833 778 180 333 333 500 564 250 333 250 
+278 500 500 500 500 500 500 500 500 500 500 278 278 564 564 564 
+444 921 722 667 667 722 611 556 722 722 333 389 722 611 889 722 
+722 556 722 667 556 611 722 722 944 722 722 611 333 278 333 469 
+500 333 444 500 444 500 444 333 500 500 278 278 500 278 778 500 
+500 500 500 333 389 278 500 500 722 500 500 444 480 200 480 541 
+778 500 778 333 500 444 1000 500 500 333 1000 556 333 889 778 778 
+778 778 333 333 444 444 350 500 1000 333 980 389 333 722 778 778 
+722 250 333 500 500 500 500 200 500 333 760 276 500 564 333 760 
+500 400 549 300 300 333 576 453 250 333 300 310 500 750 750 750 
+444 722 722 722 722 722 722 889 667 611 611 611 611 333 333 333 
+333 722 722 722 722 722 722 722 564 722 722 722 722 722 722 556 
+500 444 444 444 444 444 444 667 444 444 444 444 444 278 278 278 
+278 500 500 500 500 500 500 500 549 500 500 500 500 500 500 500 
+500 ]
+/Encoding /WinAnsiEncoding
+/FontDescriptor 11 0 R
+>>
+endobj
+11 0 obj
+<<
+/Type /FontDescriptor
+/FontName /TimesNewRoman
+/Flags 34
+/FontBBox [ -250 -239 1200 891 ]
+/MissingWidth 783
+/StemV 73
+/StemH 73
+/ItalicAngle 0
+/CapHeight 891
+/XHeight 623
+/Ascent 891
+/Descent -239
+/Leading 173
+/MaxWidth 1000
+/AvgWidth 402
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/Name /F3
+/BaseFont /CourierNew
+/FirstChar 31
+/LastChar 255
+/Widths [ 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 ]
+/Encoding /WinAnsiEncoding
+/FontDescriptor 15 0 R
+>>
+endobj
+15 0 obj
+<<
+/Type /FontDescriptor
+/FontName /CourierNew
+/Flags 35
+/FontBBox [ -250 -280 720 787 ]
+/MissingWidth 600
+/StemV 109
+/StemH 109
+/ItalicAngle 0
+/CapHeight 787
+/XHeight 550
+/Ascent 787
+/Descent -280
+/Leading 67
+/MaxWidth 600
+/AvgWidth 600
+>>
+endobj
+2 0 obj
+[ /PDF /Text /ImageC /ImageI  ]
+endobj
+5 0 obj
+<<
+/Kids [4 0 R 16 0 R 19 0 R ]
+/Count 3
+/Type /Pages
+/MediaBox [ 0 0 612 792 ]
+>>
+endobj
+1 0 obj
+<<
+/Creator <FEFF0057006F00720064002000500072006F0020>
+/CreationDate (D:20030904165312)
+/Title <FEFF004D00610067006900630041006E006400430049004600660069006C00650046006F0072006D006100740073002E005000440046>
+/Producer (Acrobat PDFWriter 4.05 for Windows)
+>>
+endobj
+3 0 obj
+<<
+/Pages 5 0 R
+/Type /Catalog
+/DefaultGray 28 0 R
+/DefaultRGB  29 0 R
+>>
+endobj
+28 0 obj
+[/CalGray
+<<
+/WhitePoint [0.9505 1 1.0891 ]
+/Gamma 0.2468 
+>>
+]
+endobj
+29 0 obj
+[/CalRGB
+<<
+/WhitePoint [0.9505 1 1.0891 ]
+/Gamma [0.2468 0.2468 0.2468 ]
+/Matrix [0.4361 0.2225 0.0139 0.3851 0.7169 0.0971 0.1431 0.0606 0.7141 ]
+>>
+]
+endobj
+xref
+0 30
+0000000000 65535 f
+0000034373 00000 n
+0000034217 00000 n
+0000034652 00000 n
+0000007238 00000 n
+0000034267 00000 n
+0000028575 00000 n
+0000029707 00000 n
+0000030004 00000 n
+0000031134 00000 n
+0000031423 00000 n
+0000032545 00000 n
+0000000021 00000 n
+0000007214 00000 n
+0000032825 00000 n
+0000033941 00000 n
+0000012947 00000 n
+0000007408 00000 n
+0000012923 00000 n
+0000028385 00000 n
+0000013118 00000 n
+0000017087 00000 n
+0000023413 00000 n
+0000017111 00000 n
+0000023389 00000 n
+0000024437 00000 n
+0000024460 00000 n
+0000028361 00000 n
+0000034749 00000 n
+0000034837 00000 n
+trailer
+<<
+/Size 30
+/Root 3 0 R
+/Info 1 0 R
+/ID [<fb29ef612afc1f37c5475b06950ada8f><fb29ef612afc1f37c5475b06950ada8f>]
+>>
+startxref
+35015
+%%EOF

@@ -1,0 +1,2 @@
+#openroad -exit input/or_pdn.tcl | tee output/24-pdn.log
+docker run -ti --rm  -v $(pwd):/project -v $(pwd)/../../lib:/lib efabless/openlane:latest  sh -c "cd /project && openroad -exit input/or_pdn.tcl | tee output/24-pdn.log"

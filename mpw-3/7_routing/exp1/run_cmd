@@ -1,0 +1,1 @@
+docker run -ti --rm  -v $(pwd):/project dineshannayya/openlane:mpw3  sh -c "cd /project && openroad -exit input/or_droute.tcl | tee output/24-tritonRoute.log"

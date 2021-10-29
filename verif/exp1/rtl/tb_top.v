@@ -206,24 +206,5 @@ endtask
 
 
 
-/**
-`ifdef GL
-//-----------------------------------------------------------------------------
-// RISC IMEM amd DMEM Monitoring TASK
-//-----------------------------------------------------------------------------
-
-`define RISC_CORE  user_uart_tb.u_top.u_core.u_riscv_top
-
-always@(posedge `RISC_CORE.wb_clk) begin
-    if(`RISC_CORE.wbd_imem_ack_i)
-          $display("RISCV-DEBUG => IMEM ADDRESS: %x Read Data : %x", `RISC_CORE.wbd_imem_adr_o,`RISC_CORE.wbd_imem_dat_i);
-    if(`RISC_CORE.wbd_dmem_ack_i && `RISC_CORE.wbd_dmem_we_o)
-          $display("RISCV-DEBUG => DMEM ADDRESS: %x Write Data: %x Resonse: %x", `RISC_CORE.wbd_dmem_adr_o,`RISC_CORE.wbd_dmem_dat_o);
-    if(`RISC_CORE.wbd_dmem_ack_i && !`RISC_CORE.wbd_dmem_we_o)
-          $display("RISCV-DEBUG => DMEM ADDRESS: %x READ Data : %x Resonse: %x", `RISC_CORE.wbd_dmem_adr_o,`RISC_CORE.wbd_dmem_dat_i);
-end
-
-`endif
-**/
 endmodule
 `default_nettype wire

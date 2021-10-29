@@ -1,0 +1,1 @@
+lvs {./input/clk_skew_adjust.spice clk_skew_adjust} {./input/clk_skew_adjust.lvs.powered.v clk_skew_adjust} /home/dinesha/workarea/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl ./output/clk_skew_adjust.lvs.lef.log -json

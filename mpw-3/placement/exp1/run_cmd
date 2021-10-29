@@ -1,5 +1,5 @@
 #Run command inside the docker
-docker run -ti --rm  -v $(pwd):/project efabless/openlane:latest  sh -c "cd /project && openroad -python input/manual_macro_place.py -l input/merged.lef -id input/5-ioPlacer.def -o output/placement.def -c  input/macro.cfg"
+docker run -ti --rm  -v $(pwd):/project dineshannayya/openlane:mpw3  sh -c "cd /project && openroad -python input/manual_macro_place.py -l input/merged.lef -id input/5-ioPlacer.def -o output/placement.def -c  input/macro.cfg"
 
 
 #Open openroad gui

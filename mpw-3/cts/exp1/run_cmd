@@ -1,0 +1,1 @@
+docker run -ti --rm  -v $(pwd):/project -v $(pwd)/../../lib:/lib dineshannayya/openlane:mpw3  sh -c "cd /project && openroad -exit input/or_cts.tcl | tee output/12-cts.log"

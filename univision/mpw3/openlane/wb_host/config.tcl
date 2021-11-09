@@ -57,29 +57,10 @@ set ::env(DIE_AREA) "0 0 300 300"
 
 set ::env(PL_TARGET_DENSITY) "0.40"
 
-# If you're going to use multiple power domains, then keep this disabled.
-set ::env(RUN_CVC) 1
-
 #set ::env(PDN_CFG) $script_dir/pdn.tcl
 
 
 set ::env(PL_ROUTABILITY_DRIVEN) 1
-
-
-
-set ::env(FP_IO_VEXTEND) 4
-set ::env(FP_IO_HEXTEND) 4
-
-set ::env(FP_PDN_VPITCH) 100
-set ::env(FP_PDN_HPITCH) 100
-set ::env(FP_PDN_VWIDTH) 5
-set ::env(FP_PDN_HWIDTH) 5
-
-set ::env(GLB_RT_MAXLAYER) 5
-set ::env(GLB_RT_MAX_DIODE_INS_ITERS) 10
-
-set ::env(DIODE_INSERTION_STRATEGY) 4
-
 
 set ::env(QUIT_ON_TIMING_VIOLATIONS) "0"
 set ::env(QUIT_ON_MAGIC_DRC) "0"

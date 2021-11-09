@@ -20,8 +20,8 @@ CLEAN = $(foreach block,$(BLOCKS), clean-$(block))
 
 OPENLANE_TAG = mpw3
 OPENLANE_IMAGE_NAME = dineshannayya/openlane:$(OPENLANE_TAG)
-OPENLANE_BASIC_COMMAND = "cd /project/openlane && flow.tcl -design ./$* -save_path .. -save -tag $* -overwrite"
-OPENLANE_INTERACTIVE_COMMAND = "cd /project/openlane && flow.tcl -it -file ./$*/interactive.tcl -design ./$* -save_path .. -save -tag $* -overwrite"
+OPENLANE_BASIC_COMMAND = "cd /project/openlane && flow.tcl -design ./$* -save_path .. -tag $* -overwrite"
+OPENLANE_INTERACTIVE_COMMAND = "cd /project/openlane && flow.tcl -it -file ./$*/interactive.tcl -design ./$* -save_path .. -tag $* -overwrite"
 
 all: $(BLOCKS)
 
@@ -44,10 +44,10 @@ $(BLOCKS) : % : ./%/config.tcl FORCE
 		-u $(shell id -u $(USER)):$(shell id -g $(USER)) \
 		$(OPENLANE_IMAGE_NAME) sh -c $(OPENLANE_BASIC_COMMAND);\
 	fi
-	mkdir -p ../signoff/$*/
-	cp $*/runs/$*/OPENLANE_VERSION ../signoff/$*/
-	cp $*/runs/$*/PDK_SOURCES ../signoff/$*/
-	cp $*/runs/$*/reports/final_summary_report.csv ../signoff/$*/
+	#mkdir -p ../signoff/$*/
+	#cp $*/runs/$*/OPENLANE_VERSION ../signoff/$*/
+	#cp $*/runs/$*/PDK_SOURCES ../signoff/$*/
+	#cp $*/runs/$*/reports/final_summary_report.csv ../signoff/$*/
 
 
 FORCE:

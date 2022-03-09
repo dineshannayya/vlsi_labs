@@ -1,0 +1,1 @@
+docker run -ti --rm  -v $(pwd):/project riscduino/openlane:mpw4  sh -c "cd /project && netgen -batch source input/setup_file.lef.lvs | tee output/lvs.log"

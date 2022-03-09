@@ -1,0 +1,1 @@
+docker run -ti --rm  -v $(pwd):/project -v $(pwd)/../../lib:/lib riscduino/openlane:mpw4  sh -c "cd /project && openroad -exit input/or_floorplan.tcl | tee output/floorplan.log"

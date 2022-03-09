@@ -1,0 +1,1 @@
+docker run -ti --rm  -v $(pwd):/project riscduino/openlane:mpw4  sh -c "cd /project && yosys -g -c synth.tcl | tee output/synth.log"

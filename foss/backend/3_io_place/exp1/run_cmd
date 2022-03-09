@@ -1,0 +1,3 @@
+#openroad -python input/io_place.py --input-lef input/merged.lef --input-def input/3-verilog2def_openroad.def --config input/pin_order.cfg --hor-layer 4 --ver-layer 3 --ver-width-mult 2 --hor-width-mult 2 --hor-extension 4 --ver-extension 4 --length 4 -o output/4-ioPlacer.def
+
+docker run -ti --rm  -v $(pwd):/project riscduino/openlane:mpw4  sh -c "cd /project && openroad -python input/io_place.py --input-lef input/merged.lef --input-def input/3-verilog2def_openroad.def --config input/pin_order.cfg --hor-layer 4 --ver-layer 3 --ver-width-mult 2 --hor-width-mult 2 --hor-extension 4 --ver-extension 4 --length 4 -o output/4-ioPlacer.def | tee output/4-place_io_ol.log"

@@ -1,0 +1,4 @@
+docker run -ti --rm  -v $(pwd):/project riscduino/openlane:mpw4  sh -c "cd /project && openroad -exit input/or_droute.tcl | tee output/24-tritonRoute.log"
+
+
+docker run -ti --rm  -v $(pwd):/project -e DISPLAY=$DISPLAY  -v /tmp/.X11-unix:/tmp/.X11-unix  riscduino/openlane:mpw4 sh -c "cd /project && openroad -gui view.tcl"

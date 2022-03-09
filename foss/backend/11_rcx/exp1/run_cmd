@@ -1,0 +1,2 @@
+#openroad -exit input/or_rcx.tcl > output/25-spef_extraction.log
+docker run -ti --rm  -v $(pwd):/project -v $(pwd)/../../lib:/lib riscduino/openlane:mpw4  sh -c "cd /project && openroad -exit input/or_rcx.tcl | tee output/25-spef_extraction.log"

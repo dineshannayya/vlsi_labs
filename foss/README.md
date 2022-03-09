@@ -41,15 +41,12 @@ Sample test case for vlsi labs to all the aspect for RTL to GDS flows
    sudo usermod -aG docker <your user name>
    # Reboot the system to enable the docker setup
 ```
-##  Step-2: Pull the Openlane docker images
-
-    Install the openlane & dv_setup docker
+## Step-2: Pull Openlane docker images
 ```bash
     docker pull riscduino/openlane:mpw4
     docker pull riscduino/dv_setup:latest
 ```
 ## Step-3: To install gtkwave for wavefor viewing
-
 ```bash
    git clone https://github.com/gtkwave/gtkwave.git
 
@@ -72,19 +69,15 @@ Sample test case for vlsi labs to all the aspect for RTL to GDS flows
 #2 . Clone the iverilog
    git clone https://github.com/steveicarus/iverilog.gi
 
-#2.1 go to iverilog directory
+#3. go to iverilog directory
+    cd iverilog
+    sh autoconf.sh
+    ./configure
 
-#3. sh autoconf.sh
+#4  in root login
+    sudo make
 
-#4. ./configure
-
-#5  in root login
-    ./make
-
-#6 To run a simple test before installation, execute
-   make check
-
-#7. Installation
+#5. Installation
     sudo make install
 
 #8.  check where where iverilog installed
@@ -111,6 +104,12 @@ make verify-pgate
 
 
 # Backend Test Scripts
+  To Reduce the git space issue, we have zip the lib folder. Unzip the folder 
+```bash
+  cd foss/backend/lib
+  gzip -d *
+  
+```
   All the lab scripts are available under foss/backend folder
 
 * **1_synthesis**           - Simple script to synthesis the RTL
@@ -127,7 +126,7 @@ make verify-pgate
 * **11_rcx**                - Spef Extraction
 * **12_sta**                - Static Timing Analysis
 
-Go to each folder and run below command
+Go to each exp1 folder and run below command
 
 ``` sh
   ./run_cmd
